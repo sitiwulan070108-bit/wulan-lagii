@@ -3,122 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pastel Lens - Kamera Lucu</title>
+    <title>🦄 Vapor Lens - Retro Pastel</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
-        /* Palet Warna Pastel yang Digunakan:
-           - #f7d794 (Kuning Muda/Peach)
-           - #fce3e3 (Merah Muda Sangat Muda)
-           - #b3cdd1 (Biru/Mint Muda)
-           - #a4508b (Ungu/Berry yang Lebih Kuat)
-        */
+        /* Palet: #f7d794 (Kuning), #fce3e3 (Pink Muda), #b3cdd1 (Mint), #a4508b (Ungu/Berry) */
 
         body {
-            /* Background seluruh halaman */
-            background-color: #f0f4f7; /* Abu-abu kebiruan sangat muda */
-            font-family: 'Arial', sans-serif;
+            /* Background dengan gradasi lembut */
+            background: linear-gradient(135deg, #f0f4f7 0%, #e0e6f0 100%); 
+            font-family: 'VT323', monospace; /* Font utama ala terminal/retro */
+        }
+
+        /* Gaya Judul Utama (Ala Arcade/Neon) */
+        h1 {
+            font-family: 'Press Start 2P', cursive; /* Font 8-bit untuk judul */
+            color: #a4508b !important;
+            text-shadow: 2px 2px #f7d794, 4px 4px #b3cdd1; /* Efek neon/glitch */
+        }
+        
+        .navbar {
+            border-bottom: 5px solid #a4508b; /* Border tebal retro */
+            box-shadow: 0 4px 6px -6px #a4508b;
         }
 
         .card {
-            border: none;
-            border-radius: 15px;
+            border: 4px solid #b3cdd1; /* Border retro tebal */
+            box-shadow: 8px 8px 0px #a4508b; /* Bayangan tebal ala 90-an */
+            border-radius: 5px; /* Sudut lebih tajam */
         }
 
-        /* Container kamera harus diisi oleh elemen <video> */
+        /* Kontainer kamera dengan border unik */
         #camera-feed {
             height: 400px;
             background-color: #ffffff;
-            border-color: #b3cdd1 !important;
-            border-radius: 10px;
-            overflow: hidden; /* Pastikan video tidak keluar dari batas */
+            border: 4px dashed #a4508b !important; /* Border putus-putus ala glitch */
+            border-radius: 0; /* Tanpa sudut melengkung */
+            
         }
         
         #camera-feed video {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Memastikan video mengisi seluruh area */
+            object-fit: cover;
         }
 
-        /* Gaya untuk placeholder/container gambar lucu */
+        /* Tombol dengan gaya unik */
+        .btn {
+            font-family: 'Press Start 2P', cursive;
+            border-radius: 0;
+            border: 2px solid #a4508b;
+            text-shadow: 1px 1px #fce3e3;
+        }
+
+        /* Gaya untuk placeholder/container gambar lucu (diubah menjadi Grid/Petak Retro) */
         .image-placeholder {
             width: 100%;
             height: 100px;
-            border-radius: 10px;
+            border: 2px solid #a4508b;
+            border-radius: 0;
             margin-bottom: 8px;
             color: #444;
             font-weight: bold;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 4px 4px 0px #f7d794; /* Bayangan kecil */
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+        }
+        
+        .lead, .navbar-text, small {
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
         }
 
+        /* Garis pemisah unik */
         hr {
-            border-color: #b3cdd1 !important;
-        }
-
-        .btn:hover {
-            filter: brightness(1.1);
-            transition: all 0.3s ease;
+            border-top: 5px double #a4508b;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg" style="background-color: #f7d794;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #fce3e3;">
         <div class="container-fluid">
-            <a class="navbar-brand text-dark fw-bold" href="#">💖 Pastel Lens</a>
+            <a class="navbar-brand text-dark fw-bold" href="#">💾 Vapor Lens</a>
             <span class="navbar-text text-dark">
-                Tangkap momen manismu!
+                Tahun 1995 menelepon! 📞
             </span>
         </div>
     </nav>
 
     <div class="container my-5">
-        <h1 class="text-center mb-4" style="color: #a4508b;">📸 Studio Foto Manis</h1>
+        <h1 class="text-center mb-4">📸 STUDIO VAPOR</h1>
         <p class="text-center lead" style="color: #6a6a6a;">Tekan tombol di bawah untuk mulai menggunakan kamera.</p>
         
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card shadow-lg" style="background-color: #fce3e3;">
+                <div class="card" style="background-color: #fce3e3;">
                     <div class="card-body p-4">
-                        <div id="camera-feed" class="border border-3 d-flex justify-content-center align-items-center">
-                            <p id="placeholder-text" class="text-muted">Klik "Mulai Kamera" di bawah</p>
+                        <div id="camera-feed" class="d-flex justify-content-center align-items-center">
+                            <p id="placeholder-text" class="text-muted">KLIK START</p>
                         </div>
                         
                         <canvas id="photo-canvas" style="display:none;"></canvas>
 
                         <div class="d-grid gap-2 mt-4">
-                            <button id="start-camera" class="btn btn-lg fw-bold" style="background-color: #a4508b; color: white;">Mulai Kamera 🌸</button>
-                            <button id="capture-photo" class="btn btn-lg fw-bold" style="background-color: #f7d794; color: #a4508b;" disabled>Ambil Foto! 🎀</button>
-                            <a id="download-link" class="btn btn-sm btn-success mt-2" style="display:none;">Unduh Foto</a>
+                            <button id="start-camera" class="btn btn-lg fw-bold" style="background-color: #a4508b; color: #f7d794;">START CAMERA 🌸</button>
+                            <button id="capture-photo" class="btn btn-lg fw-bold" style="background-color: #f7d794; color: #a4508b;" disabled>TAKE PHOTO! 🎀</button>
+                            <a id="download-link" class="btn btn-sm btn-success mt-2" style="display:none; border-color: green; background-color: #b3cdd1; color: #444;">DOWNLOAD FILE (.PNG)</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <hr class="my-5" style="border-top: 3px dashed #b3cdd1;">
+        <hr class="my-5">
 
-        <h2 class="text-center mb-4" style="color: #a4508b;">🧸 Tambahan Lucu</h2>
+        <h2 class="text-center mb-4" style="font-family: 'Press Start 2P', cursive; color: #a4508b; text-shadow: 1px 1px #fce3e3;">🧸 STICKER MENU</h2>
         <div class="row g-4 justify-content-center">
             <div class="col-6 col-md-4 col-lg-2 text-center">
-                <div class="image-placeholder" style="background-color: #c7ceea;">Boneka 🐻</div>
-                <small class="text-muted">Stiker 1</small>
+                <div class="image-placeholder" style="background-color: #c7ceea;">BEAR 🐻</div>
+                <small class="text-muted">Boneka</small>
             </div>
             <div class="col-6 col-md-4 col-lg-2 text-center">
-                <div class="image-placeholder" style="background-color: #f0e68c;">Bunga 🌼</div>
-                <small class="text-muted">Stiker 2</small>
+                <div class="image-placeholder" style="background-color: #f0e68c;">FLOWER 🌼</div>
+                <small class="text-muted">Bunga</small>
             </div>
             <div class="col-6 col-md-4 col-lg-2 text-center">
-                <div class="image-placeholder" style="background-color: #f8c3c3;">Hati ❤️</div>
-                <small class="text-muted">Stiker 3</small>
+                <div class="image-placeholder" style="background-color: #f8c3c3;">HEART ❤️</div>
+                <small class="text-muted">Hati</small>
             </div>
             <div class="col-6 col-md-4 col-lg-2 text-center">
-                <div class="image-placeholder" style="background-color: #a5dee5;">Kucing 🐱</div>
-                <small class="text-muted">Stiker 4</small>
+                <div class="image-placeholder" style="background-color: #a5dee5;">CAT 🐱</div>
+                <small class="text-muted">Kucing</small>
             </div>
         </div>
     </div>
@@ -138,33 +161,29 @@
 
         // --- Fungsi untuk Memulai Kamera ---
         startCameraButton.addEventListener('click', async () => {
-            // Cek apakah browser mendukung mediaDevices
             if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
                 alert('Maaf, browser Anda tidak mendukung akses kamera.');
                 return;
             }
 
             try {
-                // Minta izin akses video
                 videoStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
 
-                // Buat elemen video secara dinamis
                 videoElement = document.createElement('video');
                 videoElement.autoplay = true;
                 videoElement.srcObject = videoStream;
 
-                // Kosongkan dan masukkan video ke dalam div kamera
-                cameraFeedDiv.innerHTML = '';
+                cameraFeedDiv.innerHTML = ''; // Hapus teks placeholder
                 cameraFeedDiv.appendChild(videoElement);
                 
-                // Aktifkan tombol ambil foto
                 captureButton.disabled = false;
-                startCameraButton.textContent = 'Kamera Aktif ✅';
+                startCameraButton.textContent = 'CAMERA ACTIVE ✅';
                 startCameraButton.disabled = true;
 
             } catch (err) {
                 console.error("Gagal mengakses kamera: ", err);
-                placeholderText.textContent = 'Akses kamera ditolak atau tidak tersedia 😢';
+                placeholderText.textContent = 'ACCESS DENIED 😢';
+                cameraFeedDiv.appendChild(placeholderText); // Tampilkan teks error
                 alert('Gagal mengakses kamera. Pastikan Anda memberikan izin.');
             }
         });
@@ -172,32 +191,24 @@
         // --- Fungsi untuk Mengambil Foto ---
         captureButton.addEventListener('click', () => {
             if (videoElement && videoStream) {
-                // Tentukan ukuran canvas sesuai video
                 canvas.width = videoElement.videoWidth;
                 canvas.height = videoElement.videoHeight;
                 
                 const context = canvas.getContext('2d');
                 
-                // Gambar frame video saat ini ke canvas
                 context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
                 
-                // TODO: DI SINI ADALAH TEMPAT ANDA BISA MENAMBAHKAN STIKER (Bunga/Boneka)
-                // Contoh:
-                // const sticker = new Image();
-                // sticker.src = 'url_ke_gambar_bunga.png';
-                // context.drawImage(sticker, 50, 50, 100, 100); 
+                // --- Tambahkan filter retro/glitch di sini jika Anda ingin menambahkan CSS filter pada video ---
 
-                // Konversi canvas menjadi Data URL
                 const dataURL = canvas.toDataURL('image/png'); 
                 
-                // Tampilkan link download
                 downloadLink.href = dataURL;
-                downloadLink.download = 'foto_pastel_' + new Date().getTime() + '.png';
+                downloadLink.download = 'vapor_photo_' + new Date().getTime() + '.png';
                 downloadLink.style.display = 'block';
 
-                alert('Foto berhasil diambil dan siap diunduh!');
+                alert('PHOTO CAPTURED 📸. Siap diunduh!');
             } else {
-                alert('Kamera belum aktif!');
+                alert('ERROR: Kamera belum aktif!');
             }
         });
         
