@@ -3,121 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situs Minimalis Interaktif (Satu File)</title>
+    <title>Presentasi Paling Unik (dan Lucu)</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
-        /* Body/Font Dasar */
+        /* Pengaturan Global */
         body {
-            font-family: 'Arial', sans-serif; /* Ganti dengan font minimalis pilihan Anda */
-            background-color: #f8f9fa; /* Warna latar belakang sangat terang */
+            font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Font yang sedikit 'nakal' untuk kesan lucu */
+            background-color: #f0f8ff; /* Warna dasar (Alice Blue) untuk kesan ceria */
+            color: #333;
         }
 
-        /* Tampilan Card Interaktif */
-        .interactive-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            cursor: pointer; /* Menunjukkan bahwa elemen dapat diklik/diinteraksi */
+        /* Hero Section (Slide 1) */
+        #hero-slide {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffebcd; /* Warna terang yang berbeda */
+            text-align: center;
+        }
+        
+        /* Gaya Presentasi Slide */
+        .presentation-slide {
+            min-height: 80vh;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Efek Hover */
-        .interactive-card:hover {
-            transform: translateY(-5px); /* Sedikit naik */
-            box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important; /* Bayangan lebih jelas */
+        /* Kartu Interaktif (Untuk Humor) */
+        .funny-card {
+            transition: transform 0.4s ease-in-out;
+            cursor: grab; /* Kursor 'menggenggam' */
+            border: 2px dashed #ff6347; /* Border putus-putus merah-oranye */
         }
 
-        /* Tombol */
-        .btn-dark {
-            border-radius: 0.25rem; /* Sedikit membulat */
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .funny-card:hover {
+            transform: rotate(-3deg) scale(1.05); /* Sedikit berputar dan membesar saat disentuh */
+            box-shadow: 0 0 20px rgba(255, 99, 71, 0.5); /* Bayangan lucu */
+        }
+        
+        /* Tombol 'Kepo' */
+        .btn-kepo {
+            background-color: #4CAF50; /* Hijau yang mencolok */
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-kepo:hover {
+            background-color: #45a049;
+            animation: bounce 0.5s infinite alternate; /* Animasi lucu saat hover */
         }
 
-        /* Navbar */
-        .navbar-brand {
-            font-size: 1.5rem;
-            letter-spacing: 2px;
+        /* Animasi Bounce (CSS Murni) */
+        @keyframes bounce {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-5px); }
         }
 
-        .nav-link {
-            font-weight: 500;
+        /* Footer Konyol */
+        footer small {
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <section id="hero-slide" class="p-5">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">MINIMALIS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#fitur">Fitur</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kontak">Kontak</a>
-                    </li>
-                </ul>
+            <h1 class="display-1 fw-bold">🤫 RAHASIA TERBESAR</h1>
+            <h2 class="display-5 fw-light mt-3">Presentasi yang JAUH lebih seru dari menonton cat kering.</h2>
+            <p class="lead mt-4 text-muted">
+                Geser ke bawah (atau klik tombol) jika Anda siap menghadapi kenyataan yang *fun*.
+            </p>
+            <a href="#slide2" class="btn btn-kepo mt-4">AKU PENASARAN!</a>
+        </div>
+    </section>
+
+    <section id="slide2" class="presentation-slide container bg-white shadow-lg my-5">
+        <div class="row text-center">
+            <div class="col-12 mb-5">
+                <h3 class="display-4 fw-normal">Fakta #1: Tentang Kopi dan Deadline</h3>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card funny-card h-100 p-4">
+                    <div class="card-body">
+                        <h5 class="card-title">**Kenapa Harus Begadang?**</h5>
+                        <p class="card-text text-muted">
+                            Deadline adalah motivasi tercepat. Kopi adalah bensinnya. Tubuh Anda adalah mesin F1 (yang agak rewel).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card funny-card h-100 p-4">
+                    <div class="card-body">
+                        <h5 class="card-title">**Coba Sentuh Aku!**</h5>
+                        <p class="card-text text-muted">
+                            *Hover* kartu ini. Saya berubah! Ini seperti sihir, tapi ini cuma CSS. Ya, hidup memang penuh tipuan sederhana.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-    
-    <header class="container text-center py-5 my-5">
+    </section>
+
+    <section id="slide3" class="presentation-slide container bg-light my-5">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h1 class="display-3 fw-light">Desain **Bersih** dan **Fungsional**</h1>
-                <p class="lead text-muted mt-4">
-                    Fokus pada esensi. Website minimalis ini menggunakan Bootstrap untuk responsivitas dan sentuhan CSS kustom untuk estetika.
-                </p>
-                <a href="#fitur" class="btn btn-dark btn-lg mt-3">Jelajahi Sekarang</a>
+            <div class="col-lg-8 mx-auto text-center">
+                <h3 class="display-4 fw-normal mb-4">Tujuan Utama Presentasi Ini:</h3>
+                <blockquote class="blockquote">
+                    <p class="mb-0 fs-3">"Memastikan Anda tidak tertidur dan, mungkin, mendapatkan ide sarapan yang enak."</p>
+                    <footer class="blockquote-footer mt-2">Dikutip dari: <cite title="Sumber Kredibel">Otak Saya</cite></footer>
+                </blockquote>
+                
+                <h4 class="mt-5">Ada Pertanyaan Lucu?</h4>
+                <a href="mailto:emailanda@contoh.com?subject=Pertanyaan%20Kocak%20Terkait%20Presentasi" class="btn btn-outline-dark mt-2">KIRIM EMAIL NGAWUR</a>
             </div>
-        </div>
-    </header>
-
-    <section id="fitur" class="container py-5">
-        <h2 class="text-center mb-5">✨ Mengapa Minimalis?</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0 interactive-card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Cepat Dimuat</h5>
-                        <p class="card-text text-muted">Kode bersih dan aset ringan memastikan waktu muat yang sangat cepat.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0 interactive-card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Fokus Pengguna</h5>
-                        <p class="card-text text-muted">Tanpa distraksi. Pengguna langsung fokus pada konten utama Anda.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0 interactive-card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Responsif Penuh</h5>
-                        <p class="card-text text-muted">Tampilan optimal di semua perangkat, berkat sistem grid Bootstrap.</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
     
-    <footer id="kontak" class="bg-light text-center py-4 mt-5">
+    <footer class="bg-dark text-white text-center py-3">
         <div class="container">
-            <p class="mb-1">&copy; 2025 Situs Minimalis Anda. | Desain Sederhana.</p>
-            <small class="text-muted">Hubungi kami: kontak@email.com</small>
+            <p class="mb-1">&copy; 2025 Presentasi ini. | Dibuat dengan 75% kafein dan 25% Bootstrap.</p>
+            <small class="text-white-50">Semua yang Anda lihat adalah fiksi, kecuali keinginan untuk tidur siang.</small>
         </div>
     </footer>
 
