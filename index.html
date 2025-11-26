@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentasi Paling Unik (dan Lucu)</title>
+    <title>Presentasi Pastel Lembut & Lucu</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
-        /* Pengaturan Global */
-        body {
-            font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Font yang sedikit 'nakal' untuk kesan lucu */
-            background-color: #f0f8ff; /* Warna dasar (Alice Blue) untuk kesan ceria */
-            color: #333;
+        /* Palet Warna Pastel Utama */
+        :root {
+            --pastel-pink: #FFD1DC; /* Soft Pink */
+            --pastel-blue: #AEC6CF; /* Soft Blue */
+            --pastel-green: #B3E5C1; /* Soft Green */
+            --pastel-yellow: #FFFFCC; /* Soft Yellow */
+            --text-dark: #333333; /* Teks Gelap untuk Kontras */
         }
 
-        /* Hero Section (Slide 1) */
+        /* Pengaturan Global */
+        body {
+            font-family: 'Georgia', serif; /* Font klasik yang santai */
+            background-color: var(--pastel-yellow); /* Warna dasar Soft Yellow */
+            color: var(--text-dark);
+        }
+
+        /* Hero Section (Slide 1) - Pink Pastel */
         #hero-slide {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #ffebcd; /* Warna terang yang berbeda */
+            background-color: var(--pastel-pink); 
             text-align: center;
         }
         
@@ -34,31 +43,32 @@
             justify-content: center;
         }
 
-        /* Kartu Interaktif (Untuk Humor) */
+        /* Kartu Interaktif (Fakta) - Blue Pastel */
         .funny-card {
-            transition: transform 0.4s ease-in-out;
-            cursor: grab; /* Kursor 'menggenggam' */
-            border: 2px dashed #ff6347; /* Border putus-putus merah-oranye */
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            cursor: grab;
+            border: 2px dashed var(--pastel-blue); /* Border putus-putus Soft Blue */
+            background-color: var(--pastel-green); /* Latar belakang Soft Green */
         }
 
         .funny-card:hover {
-            transform: rotate(-3deg) scale(1.05); /* Sedikit berputar dan membesar saat disentuh */
-            box-shadow: 0 0 20px rgba(255, 99, 71, 0.5); /* Bayangan lucu */
+            transform: rotate(-2deg) scale(1.03); /* Sedikit berputar */
+            box-shadow: 0 0 15px rgba(174, 198, 207, 0.7); /* Bayangan soft blue */
         }
         
-        /* Tombol 'Kepo' */
+        /* Tombol 'Kepo' - Warna yang sedikit kontras */
         .btn-kepo {
-            background-color: #4CAF50; /* Hijau yang mencolok */
-            color: white;
-            border: none;
+            background-color: var(--pastel-blue); 
+            color: var(--text-dark);
+            border: 1px solid var(--text-dark);
             padding: 10px 30px;
             font-size: 1.2rem;
             transition: background-color 0.3s;
         }
         
         .btn-kepo:hover {
-            background-color: #45a049;
-            animation: bounce 0.5s infinite alternate; /* Animasi lucu saat hover */
+            background-color: var(--pastel-pink);
+            animation: bounce 0.5s infinite alternate; 
         }
 
         /* Animasi Bounce (CSS Murni) */
@@ -67,9 +77,12 @@
             to { transform: translateY(-5px); }
         }
 
-        /* Footer Konyol */
-        footer small {
-            font-style: italic;
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+        }
+        footer p, footer small {
+            color: white;
         }
     </style>
 </head>
@@ -77,28 +90,29 @@
 
     <section id="hero-slide" class="p-5">
         <div class="container">
-            <h1 class="display-1 fw-bold">🤫 RAHASIA TERBESAR</h1>
-            <h2 class="display-5 fw-light mt-3">Presentasi yang JAUH lebih seru dari menonton cat kering.</h2>
+            <h1 class="display-1 fw-bold">🧠 Fakta Yang Terlupakan</h1>
+            <h2 class="display-5 fw-light mt-3">Mari kita pelajari hal-hal lucu yang tidak penting tapi menarik.</h2>
             <p class="lead mt-4 text-muted">
-                Geser ke bawah (atau klik tombol) jika Anda siap menghadapi kenyataan yang *fun*.
+                Geser ke bawah untuk menyelami dua fakta unik yang akan mengubah hidup Anda (mungkin tidak).
             </p>
-            <a href="#slide2" class="btn btn-kepo mt-4">AKU PENASARAN!</a>
+            <a href="#slide2" class="btn btn-kepo mt-4">MARI KITA SELAM!</a>
         </div>
     </section>
 
     <section id="slide2" class="presentation-slide container bg-white shadow-lg my-5">
         <div class="row text-center">
             <div class="col-12 mb-5">
-                <h3 class="display-4 fw-normal">Fakta #1: Tentang Kopi dan Deadline</h3>
+                <h3 class="display-4 fw-normal">Duo Fakta Tidak Berguna (Tapi Seru!)</h3>
             </div>
             
             <div class="col-md-6 mb-4">
                 <div class="card funny-card h-100 p-4">
                     <div class="card-body">
-                        <h5 class="card-title">**Kenapa Harus Begadang?**</h5>
+                        <h5 class="card-title fw-bold">**1. Kucing Tidak Merasakan Manis**</h5>
                         <p class="card-text text-muted">
-                            Deadline adalah motivasi tercepat. Kopi adalah bensinnya. Tubuh Anda adalah mesin F1 (yang agak rewel).
+                            Kucing tidak memiliki reseptor rasa untuk rasa manis. Jadi, jangan heran kalau kucing Anda lebih tertarik pada ikan asin daripada es krim Anda!
                         </p>
+                        <small>*(Sentuh saya! Saya fakta!) *</small>
                     </div>
                 </div>
             </div>
@@ -106,35 +120,21 @@
             <div class="col-md-6 mb-4">
                 <div class="card funny-card h-100 p-4">
                     <div class="card-body">
-                        <h5 class="card-title">**Coba Sentuh Aku!**</h5>
+                        <h5 class="card-title fw-bold">**2. Ada "Kecerdasan" di Jari Kaki**</h5>
                         <p class="card-text text-muted">
-                            *Hover* kartu ini. Saya berubah! Ini seperti sihir, tapi ini cuma CSS. Ya, hidup memang penuh tipuan sederhana.
+                            Ketika Anda tersandung, otak Anda hanya menyadari itu *setelah* Anda tersandung. Jari kaki Anda bertindak lebih cepat daripada pusat kesadaran Anda. Itu namanya refleks!
                         </p>
+                        <small>*(Sentuh saya juga!) *</small>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="slide3" class="presentation-slide container bg-light my-5">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <h3 class="display-4 fw-normal mb-4">Tujuan Utama Presentasi Ini:</h3>
-                <blockquote class="blockquote">
-                    <p class="mb-0 fs-3">"Memastikan Anda tidak tertidur dan, mungkin, mendapatkan ide sarapan yang enak."</p>
-                    <footer class="blockquote-footer mt-2">Dikutip dari: <cite title="Sumber Kredibel">Otak Saya</cite></footer>
-                </blockquote>
-                
-                <h4 class="mt-5">Ada Pertanyaan Lucu?</h4>
-                <a href="mailto:emailanda@contoh.com?subject=Pertanyaan%20Kocak%20Terkait%20Presentasi" class="btn btn-outline-dark mt-2">KIRIM EMAIL NGAWUR</a>
-            </div>
-        </div>
-    </section>
-    
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="text-white text-center py-3">
         <div class="container">
-            <p class="mb-1">&copy; 2025 Presentasi ini. | Dibuat dengan 75% kafein dan 25% Bootstrap.</p>
-            <small class="text-white-50">Semua yang Anda lihat adalah fiksi, kecuali keinginan untuk tidur siang.</small>
+            <p class="mb-1">&copy; 2025 Presentasi Pastel. | Sekarang Anda tahu dua hal baru yang bisa Anda lupakan besok.</p>
+            <small class="text-white-50">Terima kasih sudah tidak tidur. Selamat bersenang-senang!</small>
         </div>
     </footer>
 
