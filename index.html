@@ -3,150 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pastel Pop-Up Cam 📸</title>
+    <title>📸 The Pastel Pop Snapshot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
     <style>
-        /* Definisi Variabel Warna Pastel */
+        /* Warna-warna Pastel Kustom */
         :root {
-            --pastel-pink: #FFC0CB; /* Baby Pink */
-            --pastel-mint: #B2F7E4; /* Mint Green */
-            --pastel-lavender: #E6E6FA; /* Lavender */
-            --pastel-yellow: #FFFF99; /* Lemon Yellow */
-            --pastel-background: #F8F9FA; /* Off-white for body */
-            --accent-color: #6C757D; /* Soft Grey for text */
+            --pastel-pink: #F8E7F0;
+            --pastel-mint: #E7F8F0;
+            --pastel-lavender: #D9C7E6;
+            --pastel-peach: #FFDAB9;
+            --main-text-color: #4A4A4A;
         }
 
-        /* Gaya Body */
+        /* Body dan Latar Belakang */
         body {
-            background-color: var(--pastel-background);
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            color: var(--accent-color);
+            background-color: var(--pastel-pink); /* Latar belakang utama pink muda */
+            color: var(--main-text-color);
+            font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Font yang unik dan lucu */
         }
 
-        .app-title {
-            color: var(--pastel-pink);
-            text-shadow: 2px 2px var(--pastel-lavender);
+        /* Navbar Kustom */
+        .custom-navbar {
+            background-color: var(--pastel-lavender); /* Latar belakang lavender */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-navbar .navbar-brand {
+            font-size: 1.8rem;
             font-weight: bold;
         }
 
-        /* Frame Kamera Utama (Mirip Polaroid/Mainan) */
-        #camera-frame {
-            max-width: 600px;
+        .custom-navbar .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: var(--pastel-peach) !important;
+        }
+
+        .pastel-text {
+            color: var(--pastel-peach);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Kontainer Kamera */
+        .camera-container {
+            background-color: white; /* Kontainer kamera berwarna putih */
+            border: 5px dashed var(--pastel-lavender); /* Border lucu */
+        }
+
+        #videoElement {
+            max-height: 400px;
+            object-fit: cover;
+            border: 3px solid var(--pastel-peach);
+        }
+
+        /* Tombol Kustom */
+        .custom-btn {
+            background-color: var(--pastel-peach); /* Warna peach */
+            border-color: var(--pastel-peach);
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .custom-btn:hover {
+            background-color: #FFC0CB; /* Pink lebih terang saat hover */
+            border-color: #FFC0CB;
+            transform: scale(1.05); /* Efek membesar */
+        }
+
+        /* Kartu Galeri */
+        .custom-card {
+            border: 2px solid var(--pastel-mint);
+            transition: transform 0.2s;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer Kustom */
+        .custom-footer {
             background-color: var(--pastel-mint);
-            border-radius: 20px;
-            border: 5px solid var(--pastel-yellow);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            position: relative; /* Penting untuk penempatan stiker */
+            border-top: 3px solid var(--pastel-lavender);
         }
 
-        /* Tampilan Video Stream */
-        #video-container {
-            border: 3px dashed var(--pastel-pink);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        #camera-stream {
-            transform: scaleX(-1);
-        }
-
-        /* Tombol Jepret (Shutter Button) */
-        .shutter-btn-pastel {
-            background-color: var(--pastel-pink);
-            border-color: var(--pastel-pink);
-            color: white;
-            font-weight: bold;
-            border-radius: 50px;
-            padding: 10px 30px;
-            transition: all 0.2s ease-in-out;
-            cursor: pointer;
-        }
-
-        .shutter-btn-pastel:hover {
-            background-color: var(--pastel-yellow);
-            border-color: var(--pastel-yellow);
-            transform: scale(1.05);
-            color: var(--accent-color);
-        }
-
-        /* --- Gaya Gambar/Stiker Unik --- */
-        .unique-sticker {
-            position: absolute;
-            width: 80px; /* Ukuran stiker */
-            height: 80px;
-            z-index: 10;
-        }
-
-        #sticker-top-right {
-            top: -15px;
-            right: -15px;
-            /* Ganti dengan URL gambar stiker Anda */
-            background: url('path/to/your/pastel-sticker.png') no-repeat center center;
-            background-size: contain;
-            /* Tempat penampung jika gambar tidak ada */
-            background-color: var(--pastel-pink); 
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.8rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transform: rotate(15deg); /* Memberikan kesan ditempel */
-        }
-
-        /* Pratinjau Foto dengan Bingkai Unik */
-        .photo-item {
-            padding: 15px; /* Tambah padding agar bingkai muat */
-            position: relative;
-        }
-
-        .photo-frame-dekorasi {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            border: 8px dashed var(--pastel-pink); /* Bingkai putus-putus lucu */
-            border-radius: 12px;
-            opacity: 0.6;
-        }
-
-        .photo-item img {
-            border: 5px solid white; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: var(--pastel-lavender);
-            border-radius: 8px;
-            width: 100%;
-            height: auto;
-            z-index: 2; /* Pastikan foto di atas bingkai dekorasi */
-            position: relative;
+        /* Ikon Emoji */
+        .emoji-icon {
+            margin-right: 5px;
+            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
 
-    <div class="container my-5">
-        <h1 class="text-center mb-4 app-title">
-            <i class="bi bi-camera-fill me-2"></i> Pastel Pop-Up Cam
-        </h1>
-
-        <div id="camera-frame" class="mx-auto p-3 shadow-lg">
-            
-            <div id="sticker-top-right" class="unique-sticker">
-                <span class="d-md-block d-none">✨ POPS!</span>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><span class="pastel-text">🎀 Pastel Cam</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kamera-utama">Kamera</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeri">Galeri</a>
+                    </li>
+                </ul>
             </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 text-center" id="kamera-utama">
+        <h1 class="display-4 mb-4">Click! Momen Manis Anda 🍬</h1>
+        
+        <div class="camera-container p-4 shadow-lg rounded-3">
+            <video id="videoElement" autoplay class="w-100 rounded mb-3"></video>
+            <canvas id="canvasElement" style="display:none;"></canvas>
+
+            <button id="snapButton" class="btn btn-lg custom-btn m-2">
+                <span class="emoji-icon">📸</span> Ambil Gambar Lucu!
+            </button>
+            <a id="downloadButton" class="btn btn-lg btn-secondary m-2" style="display:none;" href="#" download="PastelPopSnapshot.png">
+                <span class="emoji-icon">⬇️</span> Unduh Foto
+            </a>
+        </div>
+
+        <div class="mt-5">
+            <h3>Tambahkan Keimutan!</h3>
             
-            <div id="video-container" class="mb-3">
-                <video id="camera-stream" autoplay muted playsinline class="w-100 rounded-3"></video>
-                <div id="no-camera-msg" class="text-center py-5 d-none">
-                    <p>Mohon izinkan akses **kamera** Anda untuk memulai. Aplikasi kamera web hanya berfungsi di lingkungan **HTTPS** atau **localhost**.</p>
+            <p>Anda bisa menambahkan gambar-gambar ini di sekitar halaman untuk dekorasi!</p>
+        </div>
+
+    </main>
+
+    <section class="container my-5" id="galeri">
+        <h2 class="text-center mb-4">Galeri Manis Anda</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="gallery-output">
+            <div class="col">
+                <div class="card h-100 custom-card">
+                    <div class="card-body text-center">
+                        <p class="card-text">Foto Anda akan muncul di sini setelah Anda mengambil gambar!</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="d-flex justify-content-center">
-                <button id="
+    <footer class="text-center py-3 custom-footer mt-5">
+        <p>© 2025 Pastel Pop Snapshot | Dibuat dengan cinta dan warna pastel 💖</p>
+        <span class="emoji-icon">🌸🧸✨</span> 
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Dapatkan elemen-elemen dari HTML
+        const video = document.getElementById('videoElement');
+        const canvas = document.getElementById('canvasElement');
+        const snapButton = document.getElementById('snapButton');
+        const downloadButton = document.getElementById('downloadButton');
+        const galleryOutput = document.getElementById('gallery-output');
+
+        // === 1. AKSES KAMERA (Webcam) ===
+        function startCamera() {
+            // Meminta izin untuk mengakses kamera
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function(stream) {
+                        // Tampilkan stream video ke elemen <video>
+                        video.srcObject = stream;
+                    })
+                    .catch(function(err) {
+                        console.error("Gagal mengakses kamera: ", err);
+                        alert("Gagal mengakses kamera. Pastikan Anda memberikan izin dan menggunakan koneksi HTTPS (atau localhost)!");
+                    });
+            } else {
+                alert("Browser Anda tidak mendukung API MediaDevices.
