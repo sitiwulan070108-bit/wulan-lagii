@@ -3,141 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentasi Pastel Lembut & Lucu</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <title>Warna Terakhir 🎨</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <style>
-        /* Palet Warna Pastel Utama */
-        :root {
-            --pastel-pink: #FFD1DC; /* Soft Pink */
-            --pastel-blue: #AEC6CF; /* Soft Blue */
-            --pastel-green: #B3E5C1; /* Soft Green */
-            --pastel-yellow: #FFFFCC; /* Soft Yellow */
-            --text-dark: #333333; /* Teks Gelap untuk Kontras */
-        }
-
-        /* Pengaturan Global */
+        /* Styling Tambahan */
         body {
-            font-family: 'Georgia', serif; 
-            background-color: var(--pastel-yellow); /* Warna dasar Soft Yellow */
-            color: var(--text-dark);
-        }
-
-        /* Hero Section (Slide 1) - Pink Pastel */
-        #hero-slide {
-            height: 100vh;
+            background-color: #e9ecef; /* Warna latar belakang abu-abu muda */
             display: flex;
-            align-items: center;
             justify-content: center;
-            background-color: var(--pastel-pink); 
-            text-align: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        
-        /* Gaya Presentasi Slide */
-        .presentation-slide {
-            min-height: 80vh;
-            padding: 100px 0;
+        .game-container {
+            max-width: 500px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        #game-box {
+            width: 100%;
+            height: 150px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            transition: background-color 0.1s ease; /* Transisi halus */
         }
-
-        /* Kartu Interaktif (Fakta) - Blue Pastel */
-        .funny-card {
-            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-            cursor: grab; /* Kursor 'menggenggam' */
-            border: 2px dashed var(--pastel-blue); /* Border putus-putus Soft Blue */
-            background-color: var(--pastel-green); /* Latar belakang Soft Green */
+        #color-text {
+            font-size: 2.5rem;
+            font-weight: 900;
+            user-select: none; /* Cegah teks terseleksi */
+            transition: color 0.1s ease;
         }
-
-        .funny-card:hover {
-            transform: rotate(-2deg) scale(1.03); /* Sedikit berputar dan membesar */
-            box-shadow: 0 0 15px rgba(174, 198, 207, 0.7); /* Bayangan soft blue */
-        }
-        
-        /* Tombol 'Kepo' - Warna yang sedikit kontras */
-        .btn-kepo {
-            background-color: var(--pastel-blue); 
-            color: var(--text-dark);
-            border: 1px solid var(--text-dark);
-            padding: 10px 30px;
-            font-size: 1.2rem;
-            transition: background-color 0.3s;
-        }
-        
-        .btn-kepo:hover {
-            background-color: var(--pastel-pink);
-            animation: bounce 0.5s infinite alternate; /* Animasi lucu saat hover */
-        }
-
-        /* Animasi Bounce (CSS Murni) */
-        @keyframes bounce {
-            from { transform: translateY(0px); }
-            to { transform: translateY(-5px); }
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--text-dark);
-        }
-        footer p, footer small {
-            color: white;
+        .btn-lg {
+            min-width: 150px;
         }
     </style>
 </head>
 <body>
 
-    <section id="hero-slide" class="p-5">
-        <div class="container">
-            <h1 class="display-1 fw-bold">🧠 Fakta Yang Terlupakan</h1>
-            <h2 class="display-5 fw-light mt-3">Mari kita pelajari hal-hal lucu yang tidak penting tapi menarik.</h2>
-            <p class="lead mt-4 text-muted">
-                Geser ke bawah untuk menyelami dua fakta unik yang akan mengubah hidup Anda (mungkin tidak).
-            </p>
-            <a href="#slide2" class="btn btn-kepo mt-4">MARI KITA SELAM!</a>
-        </div>
-    </section>
+<div class="game-container text-center">
+    <h1 class="mb-3">Warna Terakhir 🎨</h1>
+    <p class="lead text-muted mb-4">
+        Cepat putuskan: Apakah **Warna Teks** SAMA dengan **Warna Kotak**?
+    </p>
 
-    <section id="slide2" class="presentation-slide container bg-white shadow-lg my-5">
-        <div class="row text-center">
-            <div class="col-12 mb-5">
-                <h3 class="display-4 fw-normal">Duo Fakta Tidak Berguna (Tapi Seru!)</h3>
-            </div>
-            
-            <div class="col-md-6 mb-4">
-                <div class="card funny-card h-100 p-4">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">**1. Kucing Tidak Merasakan Manis**</h5>
-                        <p class="card-text text-muted">
-                            Kucing tidak memiliki reseptor rasa untuk rasa manis. Jadi, jangan heran kalau kucing Anda lebih tertarik pada ikan asin daripada es krim Anda!
-                        </p>
-                        <small>*(Sentuh saya! Saya fakta!) *</small>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 mb-4">
-                <div class="card funny-card h-100 p-4">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">**2. Ada "Kecerdasan" di Jari Kaki**</h5>
-                        <p class="card-text text-muted">
-                            Ketika Anda tersandung, otak Anda hanya menyadari itu *setelah* Anda tersandung. Jari kaki Anda bertindak lebih cepat daripada pusat kesadaran Anda. Itu namanya refleks!
-                        </p>
-                        <small>*(Sentuh saya juga!) *</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="d-flex justify-content-around mb-4 fw-bold">
+        <div class="p-2 border rounded bg-light">Skor: <span id="score">0</span></div>
+        <div class="p-2 border rounded bg-light">Waktu: <span id="timer">30</span>s</div>
+    </div>
 
-    <footer class="text-white text-center py-3">
-        <div class="container">
-            <p class="mb-1">&copy; 2025 Presentasi Pastel. | Sekarang Anda tahu dua hal baru yang bisa Anda lupakan besok.</p>
-            <small class="text-white-50">Terima kasih sudah tidak tidur. Selamat bersenang-senang!</small>
-        </div>
-    </footer>
+    <div id="game-box" class="mb-4 rounded shadow-sm">
+        <h2 id="color-text">TEKAN MULAI</h2>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="control-buttons" class="mt-4 d-none">
+        <button id="btn-sama" class="btn btn-success btn-lg mx-2 shadow-sm">SAMA</button>
+        <button id="btn-beda" class="btn btn-danger btn-lg mx-2 shadow-sm">BEDA</button>
+    </div>
+
+    <button id="btn-start" class="btn btn-primary btn-block mt-4 btn-lg">MULAI GAME</button>
+
+    <p id="message" class="mt-3 fw-bold text-success"></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+    // --- Variabel Global ---
+    const colors = [
+        { name: "MERAH", hex: "#dc3545" },
+        { name: "BIRU", hex: "#0d6efd" },
+        { name: "HIJAU", hex: "#198754" },
+        { name: "KUNING", hex: "#ffc107" },
+        { name: "UNGU", hex: "#6f42c1" },
+        { name: "ORANGE", hex: "#fd7e14" }
+    ];
+
+    let score = 0;
+    let timeRemaining = 30; // 30 detik
+    let timerInterval;
+    let correctAnswer = false;
+    let gameActive = false;
+
+    // --- DOM Elements ---
+    const scoreEl = document.getElementById('score');
+    const timerEl = document.getElementById('timer');
+    const gameBox = document.getElementById('game-box');
+    const colorTextEl = document.getElementById('color-text');
+    const btnStart = document.getElementById('btn-start');
+    const controlButtons = document.getElementById('control-buttons');
+    const messageEl = document.getElementById('message');
+    const btnSama = document.getElementById('btn-sama');
+    const btnBeda = document.getElementById('btn-beda');
+
+    // --- Fungsi Utilitas ---
+
+    function getRandomIndex(arr) {
+        return Math.floor(Math.random() * arr.length);
+    }
+
+    // --- Logika Game ---
+
+    function updateScore(isCorrect) {
+        if (isCorrect) {
+            score++;
+            messageEl.textContent = "✅ Benar!";
+            messageEl.classList.remove('text-danger');
+            messageEl.classList.add('text-success');
+        } else {
+            // Kita buat sederhana: salah tidak mengurangi waktu, tapi skor tidak bertambah
+            messageEl.textContent = "❌ Salah!";
+            messageEl.classList.remove('text-success');
+            messageEl.classList.add('text-danger');
+            // Jika mau lebih sulit, uncomment baris di bawah:
+            // if (score > 0) score--;
+        }
+        scoreEl.textContent = score;
+    }
+
+    function nextRound() {
+        // 1. Pilih Warna Latar Belakang (Warna A)
+        const bgIndex = getRandomIndex(colors);
+        const bgColor = colors[bgIndex];
+
+        // 2. Pilih Warna Teks (Warna B)
+        const textColorIndex = getRandomIndex(colors);
+        const textColor = colors[textColorIndex];
+
+        // 3. Pilih Isi Teks (Kata)
+        const textContentIndex = getRandomIndex(colors);
+        const textContent = colors[textContentIndex].name; // Kata yang tertulis
+
+        // Terapkan ke DOM
+        gameBox.style.backgroundColor = bgColor.hex;
+        colorTextEl.style.color = textColor.hex;
+        colorTextEl.textContent = textContent;
+
+        // Tentukan Jawaban Benar
+        // Jawaban Benar adalah SAMA jika Warna Teks (B) sama dengan Warna Latar (A)
+        correctAnswer = (bgColor.hex === textColor.hex);
+
+        // Jika mau lebih sesuai dengan Stroop:
+        // Jawaban Benar adalah SAMA jika WARNA Teks (B) sama dengan ISI Teks (Kata)
+        // const isMatch = (colors[textColorIndex].name === textContent); 
+        // correctAnswer = isMatch;
+    }
+
+    function handleAnswer(isSame) {
+        if (!gameActive) return;
+
+        const playerIsCorrect = (isSame === correctAnswer);
+        updateScore(playerIsCorrect);
+        nextRound();
+    }
+
+    function startGame() {
+        if (gameActive) return; // Mencegah klik ganda
+
+        gameActive = true;
+        score = 0;
+        timeRemaining = 30;
+
+        scoreEl.textContent = score;
+        timerEl.textContent = timeRemaining;
+        messageEl.textContent = "";
+
+        btnStart.classList.add('d-none');
+        controlButtons.classList.remove('d-none');
+        
+        // Atur tampilan awal
+        colorTextEl.textContent = "SIAP!";
+        gameBox.style.backgroundColor = "#adb5bd"; // abu-abu gelap
+        colorTextEl.style.color = "#ffffff"; // putih
+
+        // Beri sedikit jeda sebelum putaran pertama
+        setTimeout(() => {
+            nextRound();
+            startTimer();
+        }, 1000);
+    }
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            timeRemaining--;
+            timerEl.textContent = timeRemaining;
+
+            if (timeRemaining <= 0) {
+                endGame();
+            }
+        }, 1000);
+    }
+
+    function endGame() {
+        clearInterval(timerInterval);
+        gameActive = false;
+
+        colorTextEl.textContent = "SELESAI!";
+        gameBox.style.backgroundColor = "#212529"; // Hitam
+        colorTextEl.style.color = "#ffffff"; // Putih
+
+        messageEl.textContent = `Waktu habis! Skor akhir Anda: ${score} poin.`;
+        messageEl.classList.remove('text-success', 'text-danger');
+        messageEl.classList.add('text-primary');
+
+        btnStart.textContent = "MAINKAN LAGI";
+        btnStart.classList.remove('d-none');
+        controlButtons.classList.add('d-none');
+    }
+
+    // --- Event Listeners ---
+    btnStart.addEventListener('click', startGame);
+    btnSama.addEventListener('click', () => handleAnswer(true)); // True = user menekan SAMA
+    btnBeda.addEventListener('click', () => handleAnswer(false)); // False = user menekan BEDA
+
+    // Inisialisasi tampilan awal
+    colorTextEl.textContent = "Tekan Mulai";
+
+</script>
+
 </body>
 </html>
