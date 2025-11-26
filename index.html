@@ -19,7 +19,7 @@
 
         /* Pengaturan Global */
         body {
-            font-family: 'Georgia', serif; /* Font klasik yang santai */
+            font-family: 'Georgia', serif; 
             background-color: var(--pastel-yellow); /* Warna dasar Soft Yellow */
             color: var(--text-dark);
         }
@@ -46,13 +46,13 @@
         /* Kartu Interaktif (Fakta) - Blue Pastel */
         .funny-card {
             transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-            cursor: grab;
+            cursor: grab; /* Kursor 'menggenggam' */
             border: 2px dashed var(--pastel-blue); /* Border putus-putus Soft Blue */
             background-color: var(--pastel-green); /* Latar belakang Soft Green */
         }
 
         .funny-card:hover {
-            transform: rotate(-2deg) scale(1.03); /* Sedikit berputar */
+            transform: rotate(-2deg) scale(1.03); /* Sedikit berputar dan membesar */
             box-shadow: 0 0 15px rgba(174, 198, 207, 0.7); /* Bayangan soft blue */
         }
         
@@ -68,7 +68,7 @@
         
         .btn-kepo:hover {
             background-color: var(--pastel-pink);
-            animation: bounce 0.5s infinite alternate; 
+            animation: bounce 0.5s infinite alternate; /* Animasi lucu saat hover */
         }
 
         /* Animasi Bounce (CSS Murni) */
