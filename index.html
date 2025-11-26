@@ -3,190 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📸 The Pastel Pop Snapshot</title>
+    <title>Pastel Lens - Kamera Lucu</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
     
     <style>
-        /* Warna-warna Pastel Kustom */
-        :root {
-            --pastel-pink: #F8E7F0;
-            --pastel-mint: #E7F8F0;
-            --pastel-lavender: #D9C7E6;
-            --pastel-peach: #FFDAB9;
-            --main-text-color: #4A4A4A;
-        }
+        /* Palet Warna Pastel yang Digunakan:
+           - #f7d794 (Kuning Muda/Peach)
+           - #fce3e3 (Merah Muda Sangat Muda)
+           - #b3cdd1 (Biru/Mint Muda)
+           - #a4508b (Ungu/Berry yang Lebih Kuat)
+        */
 
-        /* Body dan Latar Belakang */
         body {
-            background-color: var(--pastel-pink); /* Latar belakang utama pink muda */
-            color: var(--main-text-color);
-            font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Font yang unik dan lucu */
+            /* Background seluruh halaman */
+            background-color: #f0f4f7; /* Abu-abu kebiruan sangat muda */
+            font-family: 'Arial', sans-serif;
         }
 
-        /* Navbar Kustom */
-        .custom-navbar {
-            background-color: var(--pastel-lavender); /* Latar belakang lavender */
+        .card {
+            border: none;
+            border-radius: 15px;
+        }
+
+        /* Container kamera harus diisi oleh elemen <video> */
+        #camera-feed {
+            height: 400px;
+            background-color: #ffffff;
+            border-color: #b3cdd1 !important;
+            border-radius: 10px;
+            overflow: hidden; /* Pastikan video tidak keluar dari batas */
+        }
+        
+        #camera-feed video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Memastikan video mengisi seluruh area */
+        }
+
+        /* Gaya untuk placeholder/container gambar lucu */
+        .image-placeholder {
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            color: #444;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .custom-navbar .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: bold;
+        hr {
+            border-color: #b3cdd1 !important;
         }
 
-        .custom-navbar .nav-link {
-            color: white !important;
-            font-weight: 500;
-        }
-
-        .custom-navbar .nav-link:hover {
-            color: var(--pastel-peach) !important;
-        }
-
-        .pastel-text {
-            color: var(--pastel-peach);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Kontainer Kamera */
-        .camera-container {
-            background-color: white; /* Kontainer kamera berwarna putih */
-            border: 5px dashed var(--pastel-lavender); /* Border lucu */
-        }
-
-        #videoElement {
-            max-height: 400px;
-            object-fit: cover;
-            border: 3px solid var(--pastel-peach);
-        }
-
-        /* Tombol Kustom */
-        .custom-btn {
-            background-color: var(--pastel-peach); /* Warna peach */
-            border-color: var(--pastel-peach);
-            color: white;
-            font-weight: bold;
+        .btn:hover {
+            filter: brightness(1.1);
             transition: all 0.3s ease;
-        }
-
-        .custom-btn:hover {
-            background-color: #FFC0CB; /* Pink lebih terang saat hover */
-            border-color: #FFC0CB;
-            transform: scale(1.05); /* Efek membesar */
-        }
-
-        /* Kartu Galeri */
-        .custom-card {
-            border: 2px solid var(--pastel-mint);
-            transition: transform 0.2s;
-        }
-
-        .custom-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Footer Kustom */
-        .custom-footer {
-            background-color: var(--pastel-mint);
-            border-top: 3px solid var(--pastel-lavender);
-        }
-
-        /* Ikon Emoji */
-        .emoji-icon {
-            margin-right: 5px;
-            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg custom-navbar">
+    <nav class="navbar navbar-expand-lg" style="background-color: #f7d794;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><span class="pastel-text">🎀 Pastel Cam</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kamera-utama">Kamera</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#galeri">Galeri</a>
-                    </li>
-                </ul>
-            </div>
+            <a class="navbar-brand text-dark fw-bold" href="#">💖 Pastel Lens</a>
+            <span class="navbar-text text-dark">
+                Tangkap momen manismu!
+            </span>
         </div>
     </nav>
 
-    <main class="container my-5 text-center" id="kamera-utama">
-        <h1 class="display-4 mb-4">Click! Momen Manis Anda 🍬</h1>
+    <div class="container my-5">
+        <h1 class="text-center mb-4" style="color: #a4508b;">📸 Studio Foto Manis</h1>
+        <p class="text-center lead" style="color: #6a6a6a;">Tekan tombol di bawah untuk mulai menggunakan kamera.</p>
         
-        <div class="camera-container p-4 shadow-lg rounded-3">
-            <video id="videoElement" autoplay class="w-100 rounded mb-3"></video>
-            <canvas id="canvasElement" style="display:none;"></canvas>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg" style="background-color: #fce3e3;">
+                    <div class="card-body p-4">
+                        <div id="camera-feed" class="border border-3 d-flex justify-content-center align-items-center">
+                            <p id="placeholder-text" class="text-muted">Klik "Mulai Kamera" di bawah</p>
+                        </div>
+                        
+                        <canvas id="photo-canvas" style="display:none;"></canvas>
 
-            <button id="snapButton" class="btn btn-lg custom-btn m-2">
-                <span class="emoji-icon">📸</span> Ambil Gambar Lucu!
-            </button>
-            <a id="downloadButton" class="btn btn-lg btn-secondary m-2" style="display:none;" href="#" download="PastelPopSnapshot.png">
-                <span class="emoji-icon">⬇️</span> Unduh Foto
-            </a>
-        </div>
-
-        <div class="mt-5">
-            <h3>Tambahkan Keimutan!</h3>
-            
-            <p>Anda bisa menambahkan gambar-gambar ini di sekitar halaman untuk dekorasi!</p>
-        </div>
-
-    </main>
-
-    <section class="container my-5" id="galeri">
-        <h2 class="text-center mb-4">Galeri Manis Anda</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="gallery-output">
-            <div class="col">
-                <div class="card h-100 custom-card">
-                    <div class="card-body text-center">
-                        <p class="card-text">Foto Anda akan muncul di sini setelah Anda mengambil gambar!</p>
+                        <div class="d-grid gap-2 mt-4">
+                            <button id="start-camera" class="btn btn-lg fw-bold" style="background-color: #a4508b; color: white;">Mulai Kamera 🌸</button>
+                            <button id="capture-photo" class="btn btn-lg fw-bold" style="background-color: #f7d794; color: #a4508b;" disabled>Ambil Foto! 🎀</button>
+                            <a id="download-link" class="btn btn-sm btn-success mt-2" style="display:none;">Unduh Foto</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <hr class="my-5" style="border-top: 3px dashed #b3cdd1;">
 
-    <footer class="text-center py-3 custom-footer mt-5">
-        <p>© 2025 Pastel Pop Snapshot | Dibuat dengan cinta dan warna pastel 💖</p>
-        <span class="emoji-icon">🌸🧸✨</span> 
-    </footer>
+        <h2 class="text-center mb-4" style="color: #a4508b;">🧸 Tambahan Lucu</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-2 text-center">
+                <div class="image-placeholder" style="background-color: #c7ceea;">Boneka 🐻</div>
+                <small class="text-muted">Stiker 1</small>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 text-center">
+                <div class="image-placeholder" style="background-color: #f0e68c;">Bunga 🌼</div>
+                <small class="text-muted">Stiker 2</small>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 text-center">
+                <div class="image-placeholder" style="background-color: #f8c3c3;">Hati ❤️</div>
+                <small class="text-muted">Stiker 3</small>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 text-center">
+                <div class="image-placeholder" style="background-color: #a5dee5;">Kucing 🐱</div>
+                <small class="text-muted">Stiker 4</small>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Dapatkan elemen-elemen dari HTML
-        const video = document.getElementById('videoElement');
-        const canvas = document.getElementById('canvasElement');
-        const snapButton = document.getElementById('snapButton');
-        const downloadButton = document.getElementById('downloadButton');
-        const galleryOutput = document.getElementById('gallery-output');
 
-        // === 1. AKSES KAMERA (Webcam) ===
-        function startCamera() {
-            // Meminta izin untuk mengakses kamera
-            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                navigator.mediaDevices.getUserMedia({ video: true })
-                    .then(function(stream) {
-                        // Tampilkan stream video ke elemen <video>
-                        video.srcObject = stream;
-                    })
-                    .catch(function(err) {
-                        console.error("Gagal mengakses kamera: ", err);
-                        alert("Gagal mengakses kamera. Pastikan Anda memberikan izin dan menggunakan koneksi HTTPS (atau localhost)!");
-                    });
+    <script>
+        const startCameraButton = document.getElementById('start-camera');
+        const captureButton = document.getElementById('capture-photo');
+        const cameraFeedDiv = document.getElementById('camera-feed');
+        const canvas = document.getElementById('photo-canvas');
+        const downloadLink = document.getElementById('download-link');
+        const placeholderText = document.getElementById('placeholder-text');
+        
+        let videoStream = null;
+        let videoElement = null;
+
+        // --- Fungsi untuk Memulai Kamera ---
+        startCameraButton.addEventListener('click', async () => {
+            // Cek apakah browser mendukung mediaDevices
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                alert('Maaf, browser Anda tidak mendukung akses kamera.');
+                return;
+            }
+
+            try {
+                // Minta izin akses video
+                videoStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+
+                // Buat elemen video secara dinamis
+                videoElement = document.createElement('video');
+                videoElement.autoplay = true;
+                videoElement.srcObject = videoStream;
+
+                // Kosongkan dan masukkan video ke dalam div kamera
+                cameraFeedDiv.innerHTML = '';
+                cameraFeedDiv.appendChild(videoElement);
+                
+                // Aktifkan tombol ambil foto
+                captureButton.disabled = false;
+                startCameraButton.textContent = 'Kamera Aktif ✅';
+                startCameraButton.disabled = true;
+
+            } catch (err) {
+                console.error("Gagal mengakses kamera: ", err);
+                placeholderText.textContent = 'Akses kamera ditolak atau tidak tersedia 😢';
+                alert('Gagal mengakses kamera. Pastikan Anda memberikan izin.');
+            }
+        });
+
+        // --- Fungsi untuk Mengambil Foto ---
+        captureButton.addEventListener('click', () => {
+            if (videoElement && videoStream) {
+                // Tentukan ukuran canvas sesuai video
+                canvas.width = videoElement.videoWidth;
+                canvas.height = videoElement.videoHeight;
+                
+                const context = canvas.getContext('2d');
+                
+                // Gambar frame video saat ini ke canvas
+                context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+                
+                // TODO: DI SINI ADALAH TEMPAT ANDA BISA MENAMBAHKAN STIKER (Bunga/Boneka)
+                // Contoh:
+                // const sticker = new Image();
+                // sticker.src = 'url_ke_gambar_bunga.png';
+                // context.drawImage(sticker, 50, 50, 100, 100); 
+
+                // Konversi canvas menjadi Data URL
+                const dataURL = canvas.toDataURL('image/png'); 
+                
+                // Tampilkan link download
+                downloadLink.href = dataURL;
+                downloadLink.download = 'foto_pastel_' + new Date().getTime() + '.png';
+                downloadLink.style.display = 'block';
+
+                alert('Foto berhasil diambil dan siap diunduh!');
             } else {
-                alert("Browser Anda tidak mendukung API MediaDevices.
+                alert('Kamera belum aktif!');
+            }
+        });
+        
+    </script>
+</body>
+</html>
