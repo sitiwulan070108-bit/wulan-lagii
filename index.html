@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situs Minimalis Interaktif (Satu File)</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Body/Font Dasar */
+        body {
+            font-family: 'Arial', sans-serif; /* Ganti dengan font minimalis pilihan Anda */
+            background-color: #f8f9fa; /* Warna latar belakang sangat terang */
+        }
 
+        /* Tampilan Card Interaktif */
+        .interactive-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer; /* Menunjukkan bahwa elemen dapat diklik/diinteraksi */
+        }
+
+        /* Efek Hover */
+        .interactive-card:hover {
+            transform: translateY(-5px); /* Sedikit naik */
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important; /* Bayangan lebih jelas */
+        }
+
+        /* Tombol */
+        .btn-dark {
+            border-radius: 0.25rem; /* Sedikit membulat */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">MINIMALIS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fitur">Fitur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="container text-center py-5 my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-3 fw-light">Desain **Bersih** dan **Fungsional**</h1>
+                <p class="lead text-muted mt-4">
+                    Fokus pada esensi. Website minimalis ini menggunakan Bootstrap untuk responsivitas dan sentuhan CSS kustom untuk estetika.
+                </p>
+                <a href="#fitur" class="btn btn-dark btn-lg mt-3">Jelajahi Sekarang</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="fitur" class="container py-5">
+        <h2 class="text-center mb-5">✨ Mengapa Minimalis?</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 interactive-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Cepat Dimuat</h5>
+                        <p class="card-text text-muted">Kode bersih dan aset ringan memastikan waktu muat yang sangat cepat.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 interactive-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Fokus Pengguna</h5>
+                        <p class="card-text text-muted">Tanpa distraksi. Pengguna langsung fokus pada konten utama Anda.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 interactive-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Responsif Penuh</h5>
+                        <p class="card-text text-muted">Tampilan optimal di semua perangkat, berkat sistem grid Bootstrap.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <footer id="kontak" class="bg-light text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2025 Situs Minimalis Anda. | Desain Sederhana.</p>
+            <small class="text-muted">Hubungi kami: kontak@email.com</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
